@@ -13,7 +13,7 @@ Yuechen Li, 2018212568, 190015338, liyuechen@bupt.edu.cn
 
 Yuchen Wu, 2018212572, 190015291, 2018212572@bupt.edu.cn
 
-Name, BUPT Student Number, QM Student Number, Email
+Xinyu Niu, 2018212562, 190014766, niuxinyu990815@bupt.edu.cn
 
 Name, BUPT Student Number, QM Student Number, Email
 
