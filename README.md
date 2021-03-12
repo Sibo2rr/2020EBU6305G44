@@ -1,7 +1,7 @@
 # 2020EBU6305G44
 ## EBU6305
 
-## Group Number: 2020EBU6305G**
+## Group Number: 2020EBU6305G44
 
 ## Project Title: XXXXXXXXXXXXXXXX
 
