@@ -7,9 +7,9 @@
 
 ## Members:
 
-Sibo Wu, 2018212565, 190014283, 2018212565@bupt.eedu.cn
+Sibo Wu, 2018212565, 190014283, 2018212565@bupt.edu.cn
 
-Name, BUPT Student Number, QM Student Number, Email
+Yuechen Li, 2018212568, 190015338, liyuechen@bupt.edu.cn
 
 Name, BUPT Student Number, QM Student Number, Email
 
