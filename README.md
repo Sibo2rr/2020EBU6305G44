@@ -15,6 +15,6 @@ Yuchen Wu, 2018212572, 190015291, 2018212572@bupt.edu.cn
 
 Xinyu Niu, 2018212562, 190014766, niuxinyu990815@bupt.edu.cn
 
-Shiyuan Li, 2018212574, 190014180, 2640616318@qq.com
+Shiyuan Li, 2018212574, 190014180, 2018212574@bupt.edu.cn
 
 Assigned TA: XXXXXXX
