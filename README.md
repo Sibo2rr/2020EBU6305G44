@@ -17,4 +17,4 @@ Xinyu Niu, 2018212562, 190014766, niuxinyu990815@bupt.edu.cn
 
 Shiyuan Li, 2018212574, 190014180, 2018212574@bupt.edu.cn
 
-Assigned TA: XXXXXXX
+Assigned TA: 
