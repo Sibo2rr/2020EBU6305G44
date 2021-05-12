@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "myfont1";
+    src: url(../font/包图小白体.ttf)
+}
+
+.dog{
+    font-family: "myfont1";
+    color:#f00;
+    font-size: large;
+}
