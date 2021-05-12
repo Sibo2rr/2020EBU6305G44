@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <title>Quiz</title>
+    <head>
+        <style>
+            body{
+                background-image: url(../src/images/normandybg.jpeg);
+                background-size: cover;
+            }
+            .Question{
+                color:black;
+                width: 100%;
+                height: 200px;
+                margin: 15px;
+                padding: 0px;
+                font-size: 20px;
+            }
+            .Firstline{
+                width: 100%;
+                height: 50px;
+                margin: 5px;
+                padding: 0px;
+            }
+            .Button{
+                background-color: white; 
+                width: 150px; 
+                height: 50px; 
+                line-height: 50px;
+                border: 5px solid black; 
+                margin: 30px; 
+                text-align: center;
+                font-size: 20px;
+                box-shadow: rgba(0,0,0,0.3) 10px 12px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="Firstline">
+            <span>
+                <a href="../homepage.html"><img src="../src/images/home.png" width="40px" height="40px" style="float: right; margin: 10px;"></a>
+                <a href="../textpage/Britain.html"><img src="../src/images/returnicon.png" width="30px" height="30px" style="float: right;margin: 10px;border-top-width: 10px;padding-top: 10px;width: 30px;padding-bottom: 10px;"></a>
+            </span>
+            
+            <h1 style="color:red; font-size: 40px;">Quiz -- Battle of Britain</h1>
+        </div>
+        
+        <div class="Question">
+            <h2>Q1.What's the result of this battle</h2>
+            <label><input type="radio" name="Q1" value="A">A.It struck down the reactionary flame of the Japanese puppet army </label><br>
+		    <label><input type="radio" name="Q1" value="B">B.It  laid the foundation for the success of the Philippines, Okinawa and other places later captured by American forces.</label><br>
+            <label><input type="radio" name="Q1" value="C">C.No result</label><br>
+		    <label><input type="radio" name="Q1" value="D">D.The war ended with the defeat of Nazi Germany on 22 June 1941</label><br>
+
+        </div>
+        <br>
+        <div class="Question">
+            <h2>Q2.Which statement is true?</h2>
+            <label><input type="radio" name="Q2" value="A">A.The battle ended the Afrikaner Panzer Legion offensive, after which the Axis forces shifted to a strategic retreat operation in North Africa. </label><br>
+		    <label><input type="radio" name="Q2" value="B">B.It was a large-scale air war between 1940 and 1941 launched by Nazi Germany against Britain during World War II</label><br>
+            <label><input type="radio" name="Q2" value="C">C.The El Alamein Line is 40 kilometers long, located between the city of El Alamein on Egypt's northern Mediterranean coast and the Katarra Depression in the south</label><br>
+            <label><input type="radio" name="Q2" value="D">D.This campaign greatly increased the confidence of the people in North China in winning the war behind the enemy lines</label><br>
+        </div>
+        <br>
+        <div class="Question">
+            <h2>Q3.What were the main weapons used in the war </h2>
+            <label><input type="radio" name="Q3" value="A">Air plane</label><br>
+		    <label><input type="radio" name="Q3" value="B">Car</label><br>
+            <label><input type="radio" name="Q3" value="C">School</label><br>
+            <label><input type="radio" name="Q3" value="D">Playground</label><br>
+        </div>
+        <!-- <button onclick="checkAnswer()"></button> -->
+        <a class="Button" style="float: right; text-decoration: none;" onclick="checkAnswer()">Submit</a>
+        <a class="Button" style="float: right; text-decoration: none;" href = "../homepage.html">Quit</a>
+
+    <script>
+         function checkAnswer()
+        {
+            var rightNum = 0;
+            var b1= document.getElementsByName("Q1");
+            for (var i = 0; i < b1.length; i++) 
+            {
+                if (b1[i].checked == true) 
+                {//如果选中，下面的alert就会弹出选中的值
+                    if(b1[i].value == "D")
+                    {
+                        rightNum++;
+                    }
+                }
+            }
+
+            var b2= document.getElementsByName("Q2");
+            for (var i = 0; i < b2.length; i++) 
+            {
+                if (b2[i].checked == true) 
+                {//如果选中，下面的alert就会弹出选中的值
+                    if(b2[i].value == "B")
+                    {
+                        rightNum++;
+                    }
+                }
+            }
+
+            var b3= document.getElementsByName("Q3");
+            for (var i = 0; i < b3.length; i++) 
+            {
+                if (b3[i].checked == true) 
+                {//如果选中，下面的alert就会弹出选中的值
+                    if(b3[i].value == "A")
+                    {
+                        rightNum++;
+                    }
+                }
+            }
+            if (rightNum == 3)
+            {
+                window.location.href='../quizResult/quizResult1/quizResult3.html';
+            }
+            if (rightNum == 0)
+            {
+                window.location.href='../quizResult/quizResult1/quizResult0.html'
+            }
+            if (rightNum == 1)
+            {
+                window.location.href='../quizResult/quizResult1/quizResult1.html'
+            }
+            if (rightNum == 2)
+            {
+                window.location.href='../quizResult/quizResult1/quizResult2.html'
+            }
+
+        }
+  
+    </script>  
+    </body>
+</html>

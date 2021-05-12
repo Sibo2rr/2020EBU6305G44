@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <title>Quiz</title>
+    <head>
+        <style>
+            body{
+                background-image: url(../src/images/normandybg.jpeg);
+                background-size: cover;
+            }
+            .Question{
+                color:black;
+                width: 100%;
+                height: 200px;
+                margin: 15px;
+                padding: 0px;
+                font-size: 20px;
+            }
+            .Firstline{
+                width: 100%;
+                height: 50px;
+                margin: 5px;
+                padding: 0px;
+            }
+            .Button{
+                background-color: white; 
+                width: 150px; 
+                height: 50px; 
+                line-height: 50px;
+                border: 5px solid black; 
+                margin: 30px; 
+                text-align: center;
+                font-size: 20px;
+                box-shadow: rgba(0,0,0,0.3) 10px 12px 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="Firstline">
+            <span>
+                <a href="../homepage.html"><img src="../src/images/home.png" width="40px" height="40px" style="float: right; margin: 10px;"></a>
+                <a href="../textpage/Yuxianggui.html"><img src="../src/images/returnicon.png" width="30px" height="30px" style="float: right;margin: 10px;border-top-width: 10px;padding-top: 10px;width: 30px;padding-bottom: 10px;"></a>
+            </span>
+            
+            <h1 style="color:red; font-size: 40px;">Quiz -- Yuxianggui battle</h1>
+        </div>
+        
+        <div class="Question">
+            <h2>Q1.In which year did the battle of Henan, Hunan and Guangxi take place?</h2>
+            <label><input type="radio" name="Q1" value="A">A.1944 </label><br>
+		    <label><input type="radio" name="Q1" value="B">B.1945</label><br>
+            <label><input type="radio" name="Q1" value="C">C.1937</label><br>
+		    <label><input type="radio" name="Q1" value="D">D.1946</label><br>
+
+        </div>
+        <br>
+        <div class="Question">
+            <h2>Q2.Henan, Hunan, Guangxi, Guangdong and Guizhou were involved in the battle.?</h2>
+            <label><input type="radio" name="Q2" value="A">A.true </label><br>
+		    <label><input type="radio" name="Q2" value="B">B.flase</label><br>
+            
+        </div>
+        <br>
+        <div class="Question">
+            <h2>Q3.What are the participants in the battle of Henan, Hunan and Guangxi?</h2>
+            <label><input type="radio" name="Q3" value="A">China, German</label><br>
+		    <label><input type="radio" name="Q3" value="B">The UK, The Philippines</label><br>
+            <label><input type="radio" name="Q3" value="C">China, Japan</label><br>
+            <label><input type="radio" name="Q3" value="D">USA, Japan</label><br>
+        </div>
+        <!-- <button onclick="checkAnswer()"></button> -->
+        <a class="Button" style="float: right; text-decoration: none;" onclick="checkAnswer()">Submit</a>
+        <a class="Button" style="float: right; text-decoration: none;" href = "../homepage.html">Quit</a>
+
+    <script>
+         function checkAnswer()
+        {
+            var rightNum = 0;
+            var b1= document.getElementsByName("Q1");
+            for (var i = 0; i < b1.length; i++) 
+            {
+                if (b1[i].checked == true) 
+                {//如果选中，下面的alert就会弹出选中的值
+                    if(b1[i].value == "A")
+                    {
+                        rightNum++;
+                    }
+                }
+            }
+
+            var b2= document.getElementsByName("Q2");
+            for (var i = 0; i < b2.length; i++) 
+            {
+                if (b2[i].checked == true) 
+                {//如果选中，下面的alert就会弹出选中的值
+                    if(b2[i].value == "A")
+                    {
+                        rightNum++;
+                    }
+                }
+            }
+
+            var b3= document.getElementsByName("Q3");
+            for (var i = 0; i < b3.length; i++) 
+            {
+                if (b3[i].checked == true) 
+                {//如果选中，下面的alert就会弹出选中的值
+                    if(b3[i].value == "")
+                    {
+                        rightNum++;
+                    }
+                }
+            }
+            if (rightNum == 3)
+            {
+                window.location.href='../quizResult/quizResult3/quizResult3.html';
+            }
+            if (rightNum == 0)
+            {
+                window.location.href='../quizResult/quizResult3/quizResult0.html'
+            }
+            if (rightNum == 1)
+            {
+                window.location.href='../quizResult/quizResult3/quizResult1.html'
+            }
+            if (rightNum == 2)
+            {
+                window.location.href='../quizResult/quizResult3/quizResult2.html'
+            }
+           
+
+        }
+  
+    </script>  
+    </body>
+</html>
