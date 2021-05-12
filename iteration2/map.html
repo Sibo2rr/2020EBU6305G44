@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <link rel="stylesheet" href="css/font.css">
+<style>
+    
+    body{
+                height: 100%;
+                width: 100%;
+                background-image: url('src/images/worldmap.jpg');
+                position: absolute;
+                background-size: cover;
+                background-attachment:local;
+                background-repeat: no-repeat;
+            }
+            .bottom{
+            height:1050px;
+            width:1500px;
+            float: left;
+            margin: 0px;
+            padding: 0px;
+            overflow:hidden; 
+            display:inline;
+            }
+            .plane{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                background-image: url('src/images/plane.png');
+                background-size: contain;
+            }
+
+            button{
+            width:100px;
+            height:100px;
+            border: 5px;
+            margin: 5px;
+            position: absolute;
+            }
+            button:active{
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+                }
+            button:focus{
+                outline:none;
+                }
+</style>
+
+
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <style>
+
+    </style>
+        <div class="bottom">
+            <div class="plane" id="plane"; style="margin-top: 400px;margin-left: 900px;">
+                
+            </div>
+            
+            <button onclick="jump(this.id)" id="5"; style="background: url(src/images/jump.png); background-size: contain;margin-left: 100px;margin-top: 20px;"></button>
+            <a href="homepage.html"><img src="src/images/home.png" width="40px" height="40px" style="float: right; margin: 100px;"></a>
+            <button onclick="move(this.id)" id="1"; style="background: url(src/images/up.png); background-size: contain;margin-left: 1320px;margin-top: 750px;"></button>
+
+            <button  onclick="move(this.id)" id="2"; style="background: url(src/images/down.png); background-size: contain;margin-left: 1320px;margin-top: 900px;"></button>
+
+            <button onclick="move(this.id)" id="3"; style="background: url(src/images/left.png); background-size: contain;margin-left: 1245px;margin-top: 830px;"></button>
+
+            <button onclick="move(this.id)" id="4"; style="background: url(src/images/right.png); background-size: contain;margin-left: 1395px;margin-top: 830px;"></button>
+        </div>
+</body>
+
+<script>
+    var type1=new Array[5];
+    type1[0]='Africa';
+    type1[1]='WestE';
+    type1[2]='EastE';
+    type1[3]='China';
+    type1[4]='PACIFIC';
+    var a=0;
+    var type='';
+    
+
+    function move(buttonID){
+                if(buttonID=="1")
+                {
+                    
+				    var btn1=document.getElementById("1");
+					var box=document.getElementById("plane");
+					box.style.marginTop = parseInt(box.style.marginTop)-30+"px";
+                }
+                if(buttonID=="2")
+                {
+                    
+				    var btn1=document.getElementById("2");
+					var box=document.getElementById("plane");
+					box.style.marginTop = parseInt(box.style.marginTop)+30+"px";
+                }
+                if(buttonID=="3")
+                {
+                    
+				    var btn1=document.getElementById("3");
+					var box=document.getElementById("plane");
+					box.style.marginLeft = parseInt(box.style.marginLeft)-30+"px";
+                }
+                if(buttonID=="4")
+                {
+                    
+				    var btn1=document.getElementById("4");
+					var box=document.getElementById("plane");
+					box.style.marginLeft = parseInt(box.style.marginLeft)+30+"px";
+                }
+				
+				
+				
+            }
+        function jump(buttonID){
+            var box=document.getElementById("plane");
+            
+            if(parseInt(box.style.marginLeft)>230&&parseInt(box.style.marginLeft)<530&&parseInt(box.style.marginTop)>440&&parseInt(box.style.marginTop)<1050){
+                type='Africa';
+                // document.getElementById("plane").innerHTML = type;
+                window.location.href='timeline/timeline5.html';
+            }
+            if(parseInt(box.style.marginLeft)>530&&parseInt(box.style.marginLeft)<840&&parseInt(box.style.marginTop)>30&&parseInt(box.style.marginTop)<330){
+                type='WestE';
+                document.getElementById("plane").innerHTML = type;
+                window.location.href='timeline/timeline1.html';
+            }
+            if(parseInt(box.style.marginLeft)>840&&parseInt(box.style.marginLeft)<1280&&parseInt(box.style.marginTop)>30&&parseInt(box.style.marginTop)<180){
+                type='EestE';      
+                document.getElementById("plane").innerHTML = type; 
+                window.location.href='timeline/timeline1.html';         
+            }
+            if(parseInt(box.style.marginLeft)>840&&parseInt(box.style.marginLeft)<980&&parseInt(box.style.marginTop)>180&&parseInt(box.style.marginTop)<330){
+                type='EestE';  
+                document.getElementById("plane").innerHTML = type;  
+                window.location.href='timeline/timeline1.html';            
+            }
+            if(parseInt(box.style.marginLeft)>980&&parseInt(box.style.marginLeft)<1160&&parseInt(box.style.marginTop)>180&&parseInt(box.style.marginTop)<330){
+                type='China';
+                document.getElementById("plane").innerHTML = type; 
+                window.location.href='timeline/timeline3.html';               
+            }
+            if(parseInt(box.style.marginLeft)>1160&&parseInt(box.style.marginLeft)<1500&&parseInt(box.style.marginTop)>180&&parseInt(box.style.marginTop)<330){
+                type='PACIFIC';
+                document.getElementById("plane").innerHTML = type;
+                window.location.href='timeline/timeline4.html';
+            }
+            if(parseInt(box.style.marginLeft)>1100&&parseInt(box.style.marginLeft)<1500&&parseInt(box.style.marginTop)>330&&parseInt(box.style.marginTop)<540){
+                type='PACIFIC';   
+                document.getElementById("plane").innerHTML = type;   
+                window.location.href='timeline/timeline4.html';          
+            }
+            if((parseInt(box.style.marginLeft)<530&&parseInt(box.style.marginTop)<440)||(parseInt(box.style.marginLeft)>530&&parseInt(box.style.marginLeft)<84&&parseInt(box.style.marginTop)>330)||(parseInt(box.style.marginLeft)>530&&parseInt(box.style.marginTop)>540))
+                {
+                a=Math.floor(Math.random() * 4);
+                
+                document.getElementById("plane").innerHTML = 'Africa';
+                window.location.href='timeline/timeline5.html';
+            }
+
+        }
+
+</script>
+</html>
