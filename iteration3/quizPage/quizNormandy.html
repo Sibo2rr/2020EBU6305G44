@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="../css/quiz.css" />
+<html>
+    <title>Quiz</title>
+    <head>
+        
+    </head>
+    <h1 style="color:red; font-size: 40px;">Quiz -- Normandy</h1>
+    <a href="../homepage.html"><img src="../src/images/home.png" width="40px" height="40px" style="float: right; margin: 10px;"></a>
+    <a href="../textpage/Dunkirk.html"><img src="../src/images/returnicon.png" width="50px" height="40px" style="float: right;margin: 10px;border-top-width: 10px;padding-top: 10px;width: 30px;padding-bottom: 10px;"></a>
+    <h1 id = "score">0/3</h1>
+    <h2 id = "Que" class="Question" name="Q1">Q1.The Invasion of Normandy was a war between what two nations?</h2>
+        <div><button id = "1" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">A. The UK and Germany</button></div>
+        <div><button  id = "2"onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">B. Germany and The Soviet union</button></div>
+        <div><button  id = "3" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">C. The United States and Germany</button></div>
+        <div><button id = "4" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">D. Japan and The Soviet union</button></div>
+        <!-- <a class="Button1" style="float: right; text-decoration: none;" onclick="checkAnswer()">Next</a> -->
+        <a class="Button1" style="float: right; text-decoration: none;" href = "../homepage.html">Quit</a>
+
+    <script>
+        var rightNum = 0;
+        function checkAnswer(obj)
+        {
+            var ans = obj.id;
+            var question = document.getElementById("Que").innerText[1];
+            if(question == 1)
+            {
+                if (ans == 1)
+                {
+                    document.getElementById("score").innerHTML = "1/3";
+                    rightNum = rightNum + 1;
+                    voice();
+                }
+            document.getElementById("Que").innerHTML = "Q2.Which country did the Onvasion of Normandy occur in?";
+            document.getElementById("1").innerHTML = "A. The US";
+            document.getElementById("2").innerHTML = "B. The UK";
+            document.getElementById("3").innerHTML = "C. France";
+            document.getElementById("4").innerHTML = "D. Singapore";
+            }
+            if(question == 2)
+            {
+                if (ans == 3)
+                {
+                    document.getElementById("score").innerHTML = "2/3";
+                    rightNum = rightNum + 1;
+                    voice();
+                }
+                document.getElementById("Que").innerHTML = "Q3.Is the statement true? The victory of the Normandy landing declared the opening of the second front of the allied forces in the European continent, which meant that Nazi Germany was caught in two battles, alleviated the pressure of the Soviet army, and coordinated with the Soviet army to effectively conquer Berlin, forcing fascist Germany to surrender unconditionally ahead of time. ";
+                document.getElementById("1").innerHTML = "A. True";
+                document.getElementById("2").innerHTML = "B. False";
+                var a = document.getElementById("3");
+                a.remove();
+                var a = document.getElementById("4");
+                a.remove();
+            }       
+            if(question == 3)
+            {
+                if (ans == 1)
+                {
+                    voice();
+                    document.getElementById("score").innerHTML = "3/3";
+                    rightNum = rightNum + 1;
+                    
+                }
+                if (rightNum == 3)
+                {
+                    window.location.href='../quizResult/quizResult1/quizResult3.html';
+                }
+                if (rightNum == 0)
+                {
+                    window.location.href='../quizResult/quizResult1/quizResult0.html'
+                }
+                if (rightNum == 1)
+                {
+                    window.location.href='../quizResult/quizResult1/quizResult1.html'
+                }
+                if (rightNum == 2)
+                {
+                    window.location.href='../quizResult/quizResult1/quizResult2.html'
+                }
+            }      
+        }
+
+        function voice() 
+        {
+            var audio = document.createElement("audio");
+            audio.src = '../src/audio/correctaudio.mp3';
+            audio.play();
+        }
+    </script>  
+    </body>
+</html>

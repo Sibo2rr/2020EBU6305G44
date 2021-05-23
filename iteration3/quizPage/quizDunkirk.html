@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="../css/quiz.css" />
+<html>
+    <title>Quiz</title>
+    <head>
+        
+    </head>
+    <a href="../homepage.html"><img src="../src/images/home.png" width="40px" height="40px" style="float: right; margin: 10px;"></a>
+    <a href="../textpage/Dunkirk.html"><img src="../src/images/returnicon.png" width="50px" height="40px" style="float: right;margin: 10px;border-top-width: 10px;padding-top: 10px;width: 30px;padding-bottom: 10px;"></a>
+    <h1 id = "score">0/3</h1>
+    <h2 id = "Que" class="Question" name="Q1">Q1.Which battlefield does it belong?</h2>
+        <div><button id = "1" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">A. China</button></div>
+        <div><button  id = "2"onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">B.The Soviet</button></div>
+        <div><button  id = "3" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">C. North Africa</button></div>
+        <div><button id = "4" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">D. Japan</button></div>
+        <!-- <a class="Button1" style="float: right; text-decoration: none;" onclick="checkAnswer()">Next</a> -->
+        <a class="Button1" style="float: right; text-decoration: none;" href = "../homepage.html">Quit</a>
+
+    <script>
+        var rightNum = 0;
+        function checkAnswer(obj)
+        {
+            var ans = obj.id;
+            var question = document.getElementById("Que").innerText[1];
+            if(question == 1)
+            {
+                if (ans == 3)
+                {
+                    document.getElementById("score").innerHTML = "1/3";
+                    rightNum = rightNum + 1;
+                    voice();
+                }
+            document.getElementById("Que").innerHTML = "Q2.What was the significance of the Dunkirk Evacuation?";
+            document.getElementById("1").innerHTML = "A. It laid the foundation for the success of the Philippines, Okinawa and other places later captured by American forces.";
+            document.getElementById("2").innerHTML = "B. It completely crushed the Japanese militarist designs and accelerated the process of Japan's defeat in the war";
+            document.getElementById("3").innerHTML = "C. It means that the German army completely loses the strategic initiative and turns from the strategic offensive to the strategic defensive";
+            document.getElementById("4").innerHTML = "D. he withdrawal marked the withdrawal of British power from the European continent, and the main areas of Western Europe except Britain, Switzerland and Spain were occupied by Germany.";
+            }
+            if(question == 2)
+            {
+                if (ans == 4)
+                {
+                    document.getElementById("score").innerHTML = "2/3";
+                    rightNum = rightNum + 1;
+                    voice();
+                }
+                document.getElementById("Que").innerHTML = "Q3.Is the statement true? Dunkirk Evcuation was the largest tank battle of World War II.";
+                document.getElementById("1").innerHTML = "A. True";
+                document.getElementById("2").innerHTML = "B. False";
+                var a = document.getElementById("3");
+                a.remove();
+                var a = document.getElementById("4");
+                a.remove();
+            }       
+            if(question == 3)
+            {
+                if (ans == 2)
+                {
+                    voice();
+                    document.getElementById("score").innerHTML = "3/3";
+                    rightNum = rightNum + 1;
+                    
+                }
+                if (rightNum == 3)
+                {
+                    window.location.href='../quizResult/quizResult1/quizResult3.html';
+                }
+                if (rightNum == 0)
+                {
+                    window.location.href='../quizResult/quizResult1/quizResult0.html'
+                }
+                if (rightNum == 1)
+                {
+                    window.location.href='../quizResult/quizResult1/quizResult1.html'
+                }
+                if (rightNum == 2)
+                {
+                    window.location.href='../quizResult/quizResult1/quizResult2.html'
+                }
+            }      
+        }
+
+        function voice() 
+        {
+            var audio = document.createElement("audio");
+            audio.src = '../src/audio/correctaudio.mp3';
+            audio.play();
+        }
+    </script>  
+    </body>
+</html>

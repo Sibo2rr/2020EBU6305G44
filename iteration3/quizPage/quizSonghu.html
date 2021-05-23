@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="../css/quiz.css" />
+
+<html>
+    <title>Quiz</title>
+    <head>
+        <style>
+            
+    </style>
+    </head>
+    <a href="../homepage.html"><img src="../src/images/home.png" width="40px" height="40px" style="float: right; margin: 10px;"></a>
+    <a href="../textpage/Dunkirk.html"><img src="../src/images/returnicon.png" width="50px" height="40px" style="float: right;margin: 10px;border-top-width: 10px;padding-top: 10px;width: 30px;padding-bottom: 10px;"></a>
+    <h1 style="color:#dda15e; font-size: 40px;">Quiz -- Songhu</h1>
+    <h1 id = "score">0/3</h1>
+    <h2 id = "Que" class="Question" name="Q1">Q1.For China, the Songhu battle marked the real beginning of an all-out war between the two countries?</h2>
+        <div><button id = "1" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">A.true</button></div>
+        <div><button  id = "2"onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">B.false</button></div>
+        <div><button  id = "3" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">C.no</button></div>
+        <div><button id = "4" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">D.non</button></div>
+        <!-- <a class="Button1" style="float: right; text-decoration: none;" onclick="checkAnswer()">Next</a> -->
+        <a class="Button1" style="float: right; text-decoration: none;" href = "../homepage.html">Quit</a>
+
+    <script>
+        var rightNum = 0;
+        function checkAnswer(obj)
+        {
+            var ans = obj.id;
+            var question = document.getElementById("Que").innerText[1];
+            if(question == 1)
+            {
+                if (ans == 1)
+                {
+                    document.getElementById("score").innerHTML = "1/3";
+                    rightNum = rightNum + 1;
+                    voice();
+                }
+            document.getElementById("Que").innerHTML = "Q2.In which year did the Songhu battle take place?";
+            document.getElementById("1").innerHTML = "A.1937";
+            document.getElementById("2").innerHTML = "B.1938";
+            document.getElementById("3").innerHTML = "C.1939";
+            document.getElementById("4").innerHTML = "D.1940";
+            }
+            if(question == 2)
+            {
+                if (ans == 1)
+                {
+                    document.getElementById("score").innerHTML = "2/3";
+                    rightNum = rightNum + 1;
+                    voice();
+                }
+                document.getElementById("Que").innerHTML = "Q3.What is the winner of Songhu battle?";
+                // document.getElementById("Que").innerHTML = "Q2.Which statement is true in terms of this battle?";
+                document.getElementById("1").innerHTML = "A. China";
+                document.getElementById("2").innerHTML = "B. Japan";
+                document.getElementById("3").innerHTML = "C. The US";
+                document.getElementById("4").innerHTML = "D. The UK";
+                // var a = document.getElementById("3");
+                // a.remove();
+                // var a = document.getElementById("4");
+                // a.remove();
+            }       
+            if(question == 3)
+            {
+                if (ans == 2)
+                {
+                    voice();
+                    document.getElementById("score").innerHTML = "3/3";
+                    rightNum = rightNum + 1;
+                    
+                }
+                if (rightNum == 3)
+                {
+                    window.location.href='../quizResult/quizResult5/quizResult3.html';
+                }
+                if (rightNum == 0)
+                {
+                    window.location.href='../quizResult/quizResult5/quizResult0.html'
+                }
+                if (rightNum == 1)
+                {
+                    window.location.href='../quizResult/quizResult5/quizResult1.html'
+                }
+                if (rightNum == 2)
+                {
+                    window.location.href='../quizResult/quizResult5/quizResult2.html'
+                }
+            }      
+        }
+
+        function voice() 
+        {
+            var audio = document.createElement("audio");
+            audio.src = '../src/audio/correctaudio.mp3';
+            audio.play();
+        }
+    </script>  
+    </body>
+</html>
