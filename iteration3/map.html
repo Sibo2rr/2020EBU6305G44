@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/font.css">
+    
+<style>
+    
+
+    body{
+                height: 100%;
+                width: 100%;
+                background-image: url('src/images/worldmap.jpg');
+                position: absolute;
+                background-size:100%;
+                background-attachment:local;
+                background-repeat: no-repeat;
+            }
+            .bottom{
+            height:50%;
+            width:50%;
+            /* float: left; */
+            margin: 0px;
+            padding: 0px;
+           
+            overflow:hidden; 
+            display:inline;
+            
+            }
+            .plane{
+                margin-top: 550px;
+                margin-left: 980px;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                background-image: url('src/images/plane.png');
+                background-size: contain;
+            }
+
+            #plane1{
+                margin-top: 150px;
+                margin-left: 100px;
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                background-image: url('src/images/plane.png');
+                background-size: contain;
+            }
+
+            button{
+            width:100px;
+            height:100px;
+            border: 5px;
+            margin: 5px;
+            position: absolute;
+            }
+            button:active{
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+                }
+            button:focus{
+                outline:none;
+                }
+                
+                @media screen and (min-width: 600px) and (max-width: 1000px){
+                    #plane1{
+                margin-top: 12%;
+                margin-left: 8%;
+                width: 45px;
+                height: 45px;
+                position: absolute;
+                background-image: url('src/images/plane.png');
+                background-size: contain;
+            }
+            button{
+            width:55px;
+            height:55px;
+            border: 5px;
+            margin: 5px;
+            position: absolute;
+            }
+            }
+
+            @media screen and (min-width: 0px) and (max-width: 600px){
+                body{
+                    position: relative;
+                }
+                    #plane1{
+                margin-top: 6%;
+                margin-left: 4%;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                background-image: url('src/images/plane.png');
+                background-size: contain;
+            }
+            button{
+            width:5em;
+            height:5em;
+            border: 2em;
+            margin: 2em;
+            position:absolute;
+            }
+            }
+            #bu
+            {
+                width:10em;
+            }
+</style>
+
+
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <a href="homepage.html"><img src="src/images/home.png" width="40px" height="40px" style="float: right; margin: 10px;"></a>
+        <div class="bottom">
+            <div  id="plane1"; style="margin-top: 150px;margin-left: 100px;"> </div>
+        </div>
+        <div id = "bu">
+            <button onclick="jump(this.id)" id="5"; style="background: url(src/images/jump.png); background-size: contain;margin-left: 5%;margin-top: 5%;"></button>
+
+
+            <button onclick="move(this.id)" id="1"; style="background: url(src/images/up.png); background-size: contain;margin-left: 13.5%;margin-top: 40%;"></button>
+
+            <button  onclick="move(this.id)" id="2"; style="background: url(src/images/down.png); background-size: contain;margin-left: 13.5%;margin-top: 54%;"></button>
+
+            <button onclick="move(this.id)" id="3"; style="background: url(src/images/left.png); background-size: contain;margin-left: 6.5%;margin-top: 47%;"></button>
+
+            <button onclick="move(this.id)" id="4"; style="background: url(src/images/right.png); background-size: contain;margin-left: 20%;margin-top: 47%;"></button>
+
+        </div>
+</body>
+
+<script>
+    var type1=new Array(5);
+    type1[0]='Africa';
+    type1[1]='WestE';
+    type1[2]='EastE';
+    type1[3]='China';
+    type1[4]='PACIFIC';
+    var a=0;
+    var type='1';
+    
+
+    function move(buttonID){
+                voice1();
+                area();
+                if(buttonID=="1")
+                {
+                    
+				    var btn1=document.getElementById("1");
+					var box=document.getElementById("plane1");
+					box.style.marginTop = parseInt(box.style.marginTop)-30+"px";
+                    //document.getElementById("plane1").innerHTML =parseInt(plane1.style.marginTop) ;
+                }
+                if(buttonID=="2")
+                {
+                    
+				    var btn1=document.getElementById("2");
+					var box=document.getElementById("plane1");
+					box.style.marginTop = parseInt(box.style.marginTop)+30+"px";
+                    
+                }
+                if(buttonID=="3")
+                {
+                    
+				    var btn1=document.getElementById("3");
+					var box=document.getElementById("plane1");
+					box.style.marginLeft = parseInt(box.style.marginLeft)-30+"px";
+                    
+                }
+                if(buttonID=="4")
+                {
+                    
+				    var btn1=document.getElementById("4");
+					var box=document.getElementById("plane1");
+					box.style.marginLeft = parseInt(box.style.marginLeft)+30+"px";
+                    
+                }
+				
+				
+				
+            }
+        function jump(buttonID){
+            voice2();
+            var box=document.getElementById("plane1");
+            a=Math.floor(Math.random() * 4);    
+            document.getElementById("plane1").innerHTML =type1[a];
+           
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.2&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.353)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.419&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.838){
+                window.location="timeline/timeline5.html";
+                type='Africa';
+                document.getElementById("plane1").innerHTML = type;
+               
+
+            }
+            
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.353&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.56)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.0285&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.314){
+                
+                type='WestE';
+                window.location="timeline/timeline2.html";
+                document.getElementById("plane1").innerHTML = type;
+                
+
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.56&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.853)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.0285&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.172){
+                window.location.href='timeline/timeline1.html';
+                type='EestE';   
+ 
+                window.location="timeline/timeline1.html";
+                document.getElementById("plane1").innerHTML = type; 
+                
+         
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.56&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.65)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.172&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.314){
+                type='EestE'; 
+                document.getElementById("plane1").innerHTML = type;   
+                window.location.href='timeline/timeline1.html';
+           
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.65&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.7867)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.171&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.352){
+                type='China';
+                document.getElementById("plane1").innerHTML = type;  
+                window.location.href='timeline/timeline3.html';
+              
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.773&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<1)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.171&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.314){
+                type='PACIFIC';
+                document.getElementById("plane1").innerHTML = type;
+                window.location.href='timeline/timeline4.html';
+
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.773&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<1)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.314&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.514){
+                type='PACIFIC';  
+                document.getElementById("plane1").innerHTML = type; 
+                window.location.href='timeline/timeline4.html';
+            
+            }
+            
+            
+
+        }
+        function voice1() 
+        {
+            var audio = document.createElement("audio");
+            audio.src = 'src/audio/fly.mp3';
+            audio.play();
+        }
+        function voice2() 
+        {
+            var audio = document.createElement("audio");
+            audio.src = 'src/audio/land.mp3';
+            audio.play();
+        }
+        function area(buttonID){
+            var box=document.getElementById("plane1");
+            a=Math.floor(Math.random() * 4);    
+           
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.2&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.353)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.419&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.838){
+                type='Africa';
+                document.getElementById("plane1").innerHTML = type;
+               
+
+            }
+            
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.353&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.56)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.0285&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.314){
+                
+                type='WestE';
+
+                document.getElementById("plane1").innerHTML = type;
+                
+
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.56&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.853)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.0285&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.172){
+
+                type='EestE';   
+
+                document.getElementById("plane1").innerHTML = type; 
+                
+         
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.56&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.65)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.172&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.314){
+                type='EestE'; 
+
+                document.getElementById("plane1").innerHTML = type;   
+
+           
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.65&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<0.7867)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.171&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.352){
+                type='China';
+
+                document.getElementById("plane1").innerHTML = type;  
+
+              
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.773&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<1)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.171&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.314){
+                type='PACIFIC';
+    
+                document.getElementById("plane1").innerHTML = type;
+
+
+            }
+            if((parseInt(box.style.marginLeft)/parseInt(window.innerWidth))>0.773&&(parseInt(box.style.marginLeft)/parseInt(window.innerWidth)<1)&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))>0.314&&(parseInt(box.style.marginTop)/parseInt(window.innerHeight))<0.514){
+                type='PACIFIC';  
+
+                document.getElementById("plane1").innerHTML = type; 
+
+            
+            }
+
+            
+            
+
+        }
+
+</script>
+</html>
