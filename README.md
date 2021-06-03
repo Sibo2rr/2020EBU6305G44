@@ -3,7 +3,7 @@
 
 ## Group Number: 2020EBU6305G44
 
-## Project Title: XXXXXXXXXXXXXXXX
+## Project Title:  World War 2 History Learning Website
 
 ## Members:
 
