@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <meta name="description" content="A Collection of Dialog Effects" />
+        <meta name="keywords" content="dialog, effect, modal, overlay, animation, web design" />
+        <meta name="author" content="Codrops" />
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <!-- 若要修改背景颜色 进入demo.css修改     common styles -->
+        <link rel="stylesheet" type="text/css" href="css/dialog.css" />
+        <!-- individual effect -->
+        <link rel="stylesheet" type="text/css" href="css/dialog-ricky.css" />
+        <link rel="stylesheet" href="assets/stylesheet.css">
+        <script src="js/modernizr.custom.js"></script>
+        <style>
+            body 
+            {
+                background: url(src/images/homepagebg2.jpg) no-repeat center 0;
+                background-size:100% 100%;
+                background-attachment:fixed;
+                
+            }
+            .top
+            {
+                
+                font: 1.5em sans-serif;
+                /* 设置宽度高度背景颜色 */
+                height: auto; /*高度改为自动高度*/
+                width:100%;
+                margin-left: 0;
+                /* background:rgb(189, 181, 181); */
+                position: fixed; /*固定在顶部*/
+                top: 0;/*离顶部的距离为0*/
+                margin-bottom: 10px;
+                font-family: fantasy;
+            }
+            .top ul
+            {
+                
+                /* 清除ul标签的默认样式 */
+                width: auto;/*宽度也改为自动*/
+                list-style-type: none;
+                white-space:nowrap;
+                overflow: hidden;
+                margin-left: 5%;
+                /* margin-top: 0;          */
+                padding: 0;
+
+            }
+            .top li 
+            {
+                
+                float:left; /* 使li内容横向浮动，即横向排列  */
+                margin-right:8%;  /* 两个li之间的距离*/
+                position: relative;
+                overflow: hidden;
+            }
+            .top li a
+            {
+            /* 设置链接内容显示的格式*/
+                display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+                color:black;
+                text-align: center;
+                padding: 3px;
+                overflow: hidden;
+                text-decoration: none; /* 去除下划线 */
+                
+            }
+            .top li a:hover
+            {
+                background-color:bisque;
+                color:white;
+            }
+            .top ul li ul
+            {
+                /* 设置二级菜单 */
+                margin-left: -0.2px;
+                /* background:rgb(189, 181, 181); */
+                position: relative;
+                display: none; /* 默认隐藏二级菜单的内容 */
+
+            }
+            .top ul li ul li
+            {
+                /* 二级菜单li内容的显示 */
+                
+                float:none;
+                color:white;
+                text-align: center;
+            }
+            .top ul li:hover ul
+            {
+                /* 鼠标选中二级菜单内容时 */
+                display: block;
+                color: black;
+            }
+            iframe
+            {
+                position:relative;
+                /* left:600px; */
+                top:150px;
+                float: right;
+            }
+            .icon{
+                background: url(src/images/Quiz.png);
+                height: 20px;
+                width:20px;
+                background-size:contain; 
+                background-repeat: no-repeat;
+            }
+            @media only screen and (max-width:70.25em) 
+            {
+                .top
+            {
+                /* 设置宽度高度背景颜色 */
+                font:1.25em;
+                color:white;
+                width: 100em;
+                height: auto; /*高度改为自动高度*/
+                margin-left: 0;
+                /* background:rgb(189, 181, 181); */
+                position: fixed; /*固定在顶部*/
+                left: 0em;
+                margin-bottom: 10px;
+            }
+            .top ul
+            {
+                width: 5em;
+                /* 清除ul标签的默认样式 */
+                color:white;
+                position: fixed;
+				list-style-type: none;
+				height: 100%;
+                white-space:nowrap;
+                overflow: hidden;
+                margin-left: 5%;
+                /* margin-top: 0;          */
+                padding: 0;
+
+            }
+            .top li 
+            {
+                display: block;  
+                color:white;
+                /* float:left; 使li内容横向浮动，即横向排列  */
+                margin-bottom:8%;  /* 两个li之间的距离*/
+                position: relative;
+                overflow: hidden;
+            }
+            .top li a
+            {
+            /* 设置链接内容显示的格式*/
+                display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+                text-align: left;
+                padding: 3px;
+                color:white;
+                overflow: hidden;
+                text-decoration: none; /* 去除下划线 */
+                
+            }
+            .top li a:hover
+            {
+                z-index: 999;
+                color:white;
+                /* 鼠标选中时背景变为黑色 */
+                background-color:bisque;
+            }
+            .top ul li ul
+            {
+                /* 设置二级菜单 */
+                margin-left: -0.2px;
+                color:white;
+                /* background:rgb(189, 181, 181); */
+                /* display: none; 默认隐藏二级菜单的内容 */
+
+            }
+            .top ul li ul li
+            {
+                
+                z-index: 999;
+                color:white;
+                /* 二级菜单li内容的显示 */
+                
+                text-align: left;
+            }
+            .top ul li:hover ul
+            {
+                z-index: 999;
+                /* 鼠标选中二级菜单内容时 */
+                display: block;
+                color:black;
+            }
+            /* .carousel-wrapper
+            {
+                margin-top: 10em;
+                margin-left: 1em;
+                width: 15em;
+                margin-right: 0em;
+                float:right;
+                height: 50em;
+            } */
+            }
+			
+                
+
+        </style>
+
+        <title>
+            World War II History -- homepage
+        </title>
+        
+       
+        
+    </head>
+    <body>
+        
+            <div class="top">
+               
+                <ul>
+                <li>
+                    <a href="map.html">
+                        <img src = "src/images/mapicon.png" width="40px" height="40px">
+                        <div>Map</div> 
+                    </a>
+                </li>
+                <li >
+                    <a href="quizlist.html">
+                        <img src = "src/images/Quiz.png" width="40px" height="40px">
+                        <div>Quiz</div>   
+                    </a>
+                </li>
+                <li>
+                    <a href="vediolist.html">
+                        <img src = "src/images/vedioicon.png" width="40px" height="40px">
+                        <div>Video</div> 
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#">
+                        <img src = "src/images/timelineicon.png" width="40px" height="40px">
+                        <div>Timeline</div> 
+                    </a>
+                    <ul>
+                        <li><a style="width: 250px; text-align: left; color: white;" href="timeline/timeline1.html">Europe</a></li>
+                        <li><a style="width: 250px; text-align: left; color: white;" href="timeline/timeline2.html">Soviet-German</a></li>
+                        <li><a style="width: 200px; text-align: left; color: white;" href="timeline/timeline3.html">China</a></li>
+                        <li><a style="width: 200px; text-align: left; color: white;" href="timeline/timeline4.html">Pacific</a></li>
+                        <li><a style="width: 200px; text-align: left; color: white;" href="timeline/timeline5.html">North Africa</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="Information.html">
+                        <img src = "src/images/helpicon.png" width="40px" height="40px">
+                        <div>Information</div> 
+                    </a>
+                </li> 
+                <li>
+                    
+                        <div style="z-index: -1;">
+                            <img src = "src/images/storyicon.png"  width="45px" height="40px" data-dialog="somedialog" class="trigger" >
+                            <div style="color: black;"> 
+                            
+                                    Dailystory
+                                </div> 
+                            <div class="container" >
+                                <div class="content">
+                                    <header class="codrops-header">
+                                      
+                                        <div class="button-wrap">
+                                            <!-- 若要改动按键位置，textaligh此行 -->
+                                            <!-- <img src = "src/images/storyicon.png"  width="45px" height="40px" data-dialog="somedialog" class="trigger" > -->
+                                           
+                                            <!-- <button >每日故事</button> -->
+                                        </div>
+                                    </header>
+                                    <div id="somedialog" class="dialog">
+                                    <div class="dialog__overlay">
+                                        
+                                    </div>
+                                     <div class="dialog__content" >
+                                         <div id="story" style="word-break: normal; white-space: normal;"></div>
+                                            <div>
+                                                <br>
+                                                <br>
+                                                <button class="action" data-dialog-close>Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                            <!-- /content -->
+                            </div>
+                        </div>
+                    
+                </li>                 
+                </ul>        
+            </div>
+            <div class="carousel-wrapper">
+                <button id="carouselPreviousSlideButton" class="carousel__button carousel__button--left">
+                    <img src="assets/carousel-arrow-left.svg" alt="">
+                </button>
+                <div class="carousel">
+                    
+                    <div class="carousel__track-container">
+                        <ul id="track" class="carousel__track" >
+                            <li class="carousel__slide current-slide" >
+                                <img class="carousel__image" src="assets/3.jpeg" alt="">
+                            </li>
+                            <li class="carousel__slide" >
+                                <img class="carousel__image" src="assets/2.jpeg" alt="">
+                            </li>
+                            <li class="carousel__slide">
+                                <img class="carousel__image" src="assets/1.jpeg" alt="">
+                            </li>
+                            <li class="carousel__slide" style="left: 2253px;">
+                                <img class="carousel__image" src="assets/4.jpeg" alt="">
+                            </li>
+                            <li class="carousel__slide" style="left: 2253px;">
+                                <img class="carousel__image" src="assets/5.jpeg" alt="">
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div id="carouselNav" class="carousel__nav">
+                        <button class="carousel__indicator current-slide"></button>
+                        <button class="carousel__indicator"></button>
+                        <button class="carousel__indicator"></button>
+                        <button class="carousel__indicator"></button>
+                        <button class="carousel__indicator"></button>
+                    </div>
+                </div>
+                <button id="carouselNextSlideButton" class="carousel__button carousel__button--right">
+                    <img src="assets/carousel-arrow-right.svg" alt="">
+                </button>
+            </div>
+            <!-- <iframe src="earth.html" frameBorder="0" width="600px" scrolling="no" height="800px"></iframe> -->
+            <!-- <iframe src="http://peterned.home.xs4all.nl/demooo/" frameborder="0" scrolling="auto"  marginwidth="0" marginheight="0" allowtransparency="true" width="100%" height="400px"></iframe> -->
+           
+            
+        </div>
+        <script src="assets/script.js"></script>  
+        <script>
+                            
+    
+            var t= new Date();
+            var day=t.getDate();
+            var month=t.getMonth()+1;
+
+            var str="day :"+day+"   Month :"+month;
+            var story;
+            var story1="The battle of El Alamein is a changing spot in the world war II, it happened in Africa battlefield, it is also a battle between Montgomery and Rommel. It disappointed the Allies dream of plundering the rich Middle East.";
+            var story2="In May 25th, 1940, the British and French Army implemented the famous Dunkirk Evacuation, it aimed to save most soldiers' life and weapons for future, but it signed that the Allies only occupied the Britain Spain and Swiztzerland.";
+            var story3=" In September 1st, Nazi Germany invaded poland in short time just like lightning, it showed the fablous speed of German tamk army, it also symboled that Nazi Germany started the world war II.";
+            var story4=" In 1941, the morning of December 7th, Japanese Attacked Pearl Habour as it recognized American naval strength as the chief deterrent to war with the United States. So it sent planes to make air attack. On the airfields the Japanese destroyed 161 American planes (Army 74, Navy 87) and seriously damaged 102 (Army 71, Navy 31). This event symbolize that the start of war between America and Japan which is voted by the President Franklin D. Roosevelt.";
+            var story5="The Battle of Midway was a major naval battle in the Pacific Theater of World War II that took place on 4–7 June 1942, six months after Japan's attack on Pearl Harbor and one month after the Battle of the Coral Sea. The U.S. Navy under Admirals Chester W. Nimitz, Frank J. Fletcher, and Raymond A. Spruance defeated an attacking fleet of the Imperial Japanese Navy under Admirals Isoroku Yamamoto, Chūichi Nagumo, and Nobutake Kondō near Midway Atoll, inflicting devastating damage on the Japanese fleet that rendered their aircraft carriers irreparable. ";
+
+           function choosestory(){
+            if(day%6==0){
+                story=story1;
+            }
+           else if(day%6==1){
+                story=story1;
+            }
+           else if(day%6==2){
+               story=story2;
+            }
+           else if(day%6==3){
+               story=story3;
+           }
+           else if(day%6==4){
+               story=story4;
+           }
+           else if(day%6==5){
+               story=story5;
+           }
+           document.getElementById("story").innerHTML=story;
+           }
+          
+           choosestory();
+            
+
+       </script>
+                        <!-- /container -->
+                        <script src="js/classie.js"></script>
+                        <script src="js/dialogFx.js"></script>
+                        <script>
+                        (function() {				
+                            var dlgtrigger = document.querySelector( '[data-dialog]' ),				
+                            	somedialog = document.getElementById( dlgtrigger.getAttribute( 'data-dialog' ) ),				
+                                dlg = new DialogFx( somedialog );				
+                                dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );			
+                                })();
+                        </script>            
+
+    </body>
+  
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="../css/quiz.css" />
+
+<html>
+    <title>Quiz</title>
+    <head>
+    
+    </head>
+    <a href="../homepage.html"><img src="../src/images/home.png" width="40px" height="40px" style="float: right; margin: 10px;"></a>
+    <a href="../textpage/Dunkirk.html"><img src="../src/images/returnicon.png" width="50px" height="40px" style="float: right;margin: 10px;border-top-width: 10px;padding-top: 10px;width: 30px;padding-bottom: 10px;"></a>
+    <h1 style="color:red; font-size: 40px;">Quiz -- Tunies</h1>
+    <h1 id = "score">0/3</h1>
+    <h2 id = "Que" class="Question" name="Q1">Q1. In which year did the Battle of Tunis begin?</h2>
+        <div><button id = "1" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">A.1940</button></div>
+        <div><button  id = "2"onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">B.1941</button></div>
+        <div><button  id = "3" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">C.1942</button></div>
+        <div><button id = "4" onclick = "checkAnswer(this)" class="button button--one" style="width: 90%; height:30%">D. 1943</button></div>
+        <!-- <a class="Button1" style="float: right; text-decoration: none;" onclick="checkAnswer()">Next</a> -->
+        <a class="Button1" style="float: right; text-decoration: none;" href = "../homepage.html">Quit</a>
+
+    <script>
+        var rightNum = 0;
+        function checkAnswer(obj)
+        {
+            var ans = obj.id;
+            var question = document.getElementById("Que").innerText[1];
+            if(question == 1)
+            {
+                if (ans == 3)
+                {
+                    document.getElementById("score").innerHTML = "1/3";
+                    rightNum = rightNum + 1;
+                    voice();
+                }
+            document.getElementById("Que").innerHTML = "Q2.Which of the following countries did not participate in the Battle of Tunis?";
+            document.getElementById("1").innerHTML = "A.Britain.";
+            document.getElementById("2").innerHTML = "B.Japan";
+            document.getElementById("3").innerHTML = "C.The US";
+            document.getElementById("4").innerHTML = "D.France";
+            }
+            if(question == 2)
+            {
+                if (ans == 2)
+                {
+                    document.getElementById("score").innerHTML = "2/3";
+                    rightNum = rightNum + 1;
+                    voice();
+                }
+                document.getElementById("Que").innerHTML = "Q3. Is it true that the Battle of Tunis campaign ended in total defeat of the German-Italian coalition forces?";
+                document.getElementById("1").innerHTML = "A. True";
+                document.getElementById("2").innerHTML = "B. False";
+                var a = document.getElementById("3");
+                a.remove();
+                var a = document.getElementById("4");
+                a.remove();
+            }       
+            if(question == 3)
+            {
+                if (ans == 1)
+                {
+                    voice();
+                    document.getElementById("score").innerHTML = "3/3";
+                    rightNum = rightNum + 1;
+                    
+                }
+                if (rightNum == 3)
+                {
+                    window.location.href='../quizResult/quizResult5/quizResult3.html';
+                }
+                if (rightNum == 0)
+                {
+                    window.location.href='../quizResult/quizResult5/quizResult0.html'
+                }
+                if (rightNum == 1)
+                {
+                    window.location.href='../quizResult/quizResult5/quizResult1.html'
+                }
+                if (rightNum == 2)
+                {
+                    window.location.href='../quizResult/quizResult5/quizResult2.html'
+                }
+            }      
+        }
+
+        function voice() 
+        {
+            var audio = document.createElement("audio");
+            audio.src = '../src/audio/correctaudio.mp3';
+            audio.play();
+        }
+    </script>  
+    </body>
+</html>
